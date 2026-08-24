@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- 主标题 -->
+    <sys:String x:Key="LOCFriendlySetPlayTimeSetPlayTimeTo">Set Play Time to:</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeAlwaysEnabledTooltip">Always enabled.</sys:String>
+
+    <!-- 时间单位标签 -->
+    <sys:String x:Key="LOCFriendlySetPlayTimeDaysLabel">Days:</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeHoursLabel">Hours:</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeMinutesLabel">Minutes:</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeSecondsLabel">Seconds:</sys:String>
+
+    <!-- 完成状态 -->
+    <sys:String x:Key="LOCFriendlySetPlayTimeSetCompletionStatusTo">Set Completion Status to:</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeCompletionStatusTooltip">Disable to keep current Completion Status.</sys:String>
+
+    <!-- 最后活动时间 -->
+    <sys:String x:Key="LOCFriendlySetPlayTimeSetLastActivityTo">Set Last Activity to:</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeLastActivityTooltip">Disable to keep current Last Activity.</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeToday">Today</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeSelectedDate">Selected Date:</sys:String>
+
+    <!-- 按钮 -->
+    <sys:String x:Key="LOCFriendlySetPlayTimeSave">Save</sys:String>
+    <sys:String x:Key="LOCFriendlySetPlayTimeCancel">Cancel</sys:String>
+
+</ResourceDictionary>

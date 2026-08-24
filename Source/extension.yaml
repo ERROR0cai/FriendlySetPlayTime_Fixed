@@ -1,16 +1,12 @@
-Id: CanRanBan_Generic_FriendlySetPlayTime
-Name: Friendly Set Play Time
-Author: CanRanBan (Original version by erys)
-Version: 0.7.0
+Id: FriendlySetPlayTime_Fixed by ERROR0cai
+Name: Friendly Set Play Time_Fixed by ERROR0cai
+Author: ERROR0cai (Based on CanRanBan's version, original by erys)
+Version: 0.7.0.233
 Module: FriendlySetPlayTime.dll
 Type: GenericPlugin
 Icon: Resources\FriendlySetPlayTimeIcon.ico
 Links:
-  - Name: GitHub (Source code)
+  - Name: GitHub (Fixed version)
+    Url: https://github.com/ERROR0cai/FriendlySetPlayTime_Fixed
+  - Name: Original GitHub (CanRanBan)
     Url: https://github.com/CanRanBan/PlayniteExtensionFork-FriendlySetPlayTime
-  - Name: Wiki (Introduction and Help)
-    Url: https://github.com/CanRanBan/PlayniteExtensionFork-FriendlySetPlayTime/wiki
-  - Name: Playnite Discord (#extensions-support)
-    Url: https://discord.com/channels/365863063296933888/808419165311467630
-  - Name: Issues (Feature requests and Bugs)
-    Url: https://github.com/CanRanBan/PlayniteExtensionFork-FriendlySetPlayTime/issues

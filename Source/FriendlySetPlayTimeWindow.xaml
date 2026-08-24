@@ -26,41 +26,86 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Margin="0,0,0,5" IsEnabled="False" IsChecked="True" ToolTip="Always enabled.">Set Play Time to:</CheckBox>
+        <!-- 标题复选框 -->
+        <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Margin="0,0,0,5" 
+                  IsEnabled="False" IsChecked="True" ToolTip="{DynamicResource LOCFriendlySetPlayTimeAlwaysEnabledTooltip}">
+            <TextBlock Text="{DynamicResource LOCFriendlySetPlayTimeSetPlayTimeTo}" />
+        </CheckBox>
+
+        <!-- 天数 -->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Label Margin="0,0,0,0">Days:</Label>
-            <TextBox x:Name="PlayTimeDays" Text="{friendlySetPlayTime:CultureAwareBinding Days}" LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <Label Content="{DynamicResource LOCFriendlySetPlayTimeDaysLabel}" Margin="0,0,0,0" />
+            <TextBox x:Name="PlayTimeDays" Text="{friendlySetPlayTime:CultureAwareBinding Days}" 
+                     LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" 
+                     MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
+
+        <!-- 小时 -->
         <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Label Margin="0,0,0,0">Hours:</Label>
-            <TextBox x:Name="PlayTimeHours" Text="{friendlySetPlayTime:CultureAwareBinding Hours}" LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <Label Content="{DynamicResource LOCFriendlySetPlayTimeHoursLabel}" Margin="0,0,0,0" />
+            <TextBox x:Name="PlayTimeHours" Text="{friendlySetPlayTime:CultureAwareBinding Hours}" 
+                     LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" 
+                     MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
+
+        <!-- 分钟 -->
         <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Label Margin="0,0,0,0">Minutes:</Label>
-            <TextBox x:Name="PlayTimeMinutes" Text="{friendlySetPlayTime:CultureAwareBinding Minutes}" LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <Label Content="{DynamicResource LOCFriendlySetPlayTimeMinutesLabel}" Margin="0,0,0,0" />
+            <TextBox x:Name="PlayTimeMinutes" Text="{friendlySetPlayTime:CultureAwareBinding Minutes}" 
+                     LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" 
+                     MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
+
+        <!-- 秒 -->
         <StackPanel Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Label Margin="0,0,0,0">Seconds:</Label>
-            <TextBox x:Name="PlayTimeSeconds" Text="{friendlySetPlayTime:CultureAwareBinding Seconds}" LostFocus="TextBox_DigitsOnly_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <Label Content="{DynamicResource LOCFriendlySetPlayTimeSecondsLabel}" Margin="0,0,0,0" />
+            <TextBox x:Name="PlayTimeSeconds" Text="{friendlySetPlayTime:CultureAwareBinding Seconds}" 
+                     LostFocus="TextBox_DigitsOnly_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" 
+                     MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
 
+        <!-- 完成状态行 -->
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" Orientation="Horizontal" Margin="0,15,0,0">
-            <CheckBox x:Name="CompletionStatusCheckBox" VerticalAlignment="Center" IsEnabled="True" IsChecked="False" ToolTip="Disable to keep current Completion Status." Margin="0,0,10,0">Set Completion Status to:</CheckBox>
-            <ComboBox x:Name="CompletionStatusComboBox" VerticalAlignment="Center" MinWidth="150" SelectedItem="{Binding CompletionStatus}" ItemsSource="{Binding CompletionStatusList}" SelectionChanged="CompletionStatusComboBox_OnSelectionChanged" />
+            <CheckBox x:Name="CompletionStatusCheckBox" VerticalAlignment="Center" IsEnabled="True" IsChecked="False" 
+                      ToolTip="{DynamicResource LOCFriendlySetPlayTimeCompletionStatusTooltip}" Margin="0,0,10,0">
+                <TextBlock Text="{DynamicResource LOCFriendlySetPlayTimeSetCompletionStatusTo}" />
+            </CheckBox>
+            <ComboBox x:Name="CompletionStatusComboBox" VerticalAlignment="Center" MinWidth="150" 
+                      SelectedItem="{Binding CompletionStatus}" ItemsSource="{Binding CompletionStatusList}" 
+                      SelectionChanged="CompletionStatusComboBox_OnSelectionChanged" />
         </StackPanel>
 
-        <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0,15,10,0" x:Name="LastActivityCheckBox" IsEnabled="True" IsChecked="False" ToolTip="Disable to keep current Last Activity.">Set Last Activity to:</CheckBox>
+        <!-- 最后活动时间行 -->
+        <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0,15,10,0" 
+                  x:Name="LastActivityCheckBox" IsEnabled="True" IsChecked="False" 
+                  ToolTip="{DynamicResource LOCFriendlySetPlayTimeLastActivityTooltip}">
+            <TextBlock Text="{DynamicResource LOCFriendlySetPlayTimeSetLastActivityTo}" />
+        </CheckBox>
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Orientation="Vertical" Margin="0,15,0,0">
-            <RadioButton GroupName="LastActivityRadioButtonGroup" x:Name="LastActivityRadioButtonToday" VerticalAlignment="Center" Margin="0,0,0,5" IsEnabled="True" IsChecked="False" Click="LastActivityRadioButtonToday_OnClick">Today</RadioButton>
+            <RadioButton GroupName="LastActivityRadioButtonGroup" x:Name="LastActivityRadioButtonToday" 
+                         VerticalAlignment="Center" Margin="0,0,0,5" IsEnabled="True" IsChecked="False" 
+                         Click="LastActivityRadioButtonToday_OnClick">
+                <TextBlock Text="{DynamicResource LOCFriendlySetPlayTimeToday}" />
+            </RadioButton>
             <StackPanel Orientation="Horizontal">
-                <RadioButton GroupName="LastActivityRadioButtonGroup" x:Name="LastActivityRadioButtonDatePicker" VerticalAlignment="Center" Margin="0,0,10,0" IsEnabled="True" IsChecked="False" Click="LastActivityRadioButtonDatePicker_OnClick">Selected Date:</RadioButton>
-                <DatePicker x:Name="LastActivityDatePicker" VerticalAlignment="Center" MinWidth="150" IsEnabled="True" SelectedDateFormat="Long" SelectedDate="{Binding LastActivity}" SelectedDateChanged="LastActivityDatePicker_OnSelectedDateChanged"/>
+                <RadioButton GroupName="LastActivityRadioButtonGroup" x:Name="LastActivityRadioButtonDatePicker" 
+                             VerticalAlignment="Center" Margin="0,0,10,0" IsEnabled="True" IsChecked="False" 
+                             Click="LastActivityRadioButtonDatePicker_OnClick">
+                    <TextBlock Text="{DynamicResource LOCFriendlySetPlayTimeSelectedDate}" />
+                </RadioButton>
+                <DatePicker x:Name="LastActivityDatePicker" VerticalAlignment="Center" MinWidth="150" 
+                            IsEnabled="True" SelectedDateFormat="Long" SelectedDate="{Binding LastActivity}" 
+                            SelectedDateChanged="LastActivityDatePicker_OnSelectedDateChanged"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-            <Button Width="60" Margin="5,0,5,0" Content="Save" Click="SaveButton_OnClick" IsDefault="True"/>
-            <Button Width="80" Margin="5,0,5,0" Content="Cancel" IsCancel="True"/>
+        <!-- 按钮行 -->
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button Width="60" Margin="5,0,5,0" Content="{DynamicResource LOCFriendlySetPlayTimeSave}" 
+                    Click="SaveButton_OnClick" IsDefault="True"/>
+            <Button Width="80" Margin="5,0,5,0" Content="{DynamicResource LOCFriendlySetPlayTimeCancel}" 
+                    IsCancel="True"/>
         </StackPanel>
     </Grid>
 </UserControl>
